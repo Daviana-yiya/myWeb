@@ -1,0 +1,133 @@
+/* 整体 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4b2a82, #5b3e9c, #6a51a3, #7a64b0, #8a76bd); 
+    color: #fff;
+    transition: background-color 0.5s ease;
+}
+
+/* 让内容在中间的容器 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    padding: 20px;
+}
+
+.profile-image {
+    width: 200px;  
+    height: 200px;  
+    border-radius: 50%;  
+    object-fit: cover;  
+    margin-bottom: 20px;  
+}
+
+.image {
+    width: 100%;  
+    height: auto;  
+    object-fit: cover;  
+    margin-bottom: 20px;  
+}
+
+h1 {
+    font-size: 2em;
+    color: #fff;  
+    text-align: center;
+    margin: 0;
+}
+
+/* 导航 */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;  
+    top: 20px;        
+    left: 20px;       
+    background-color: rgba(255, 255, 255, 0.2);  
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+ul li {
+    display: block; 
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;  
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #bdc3c7; 
+}
+
+/* 下拉菜单 */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: smoothFade 0.5s ease;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #bdc3c7; 
+    color: #4b2a82;
+}
+
+/* 右下角按键 （返回寝室页面） */
+.btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #bdc3c7; 
+    color: #4b2a82;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ecf0f1; 
+    transform: scale(1.1);
+}
+
+/* 导航的动画 */
+@keyframes smoothFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
