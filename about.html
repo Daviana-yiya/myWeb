@@ -4,31 +4,112 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于我</title>
+    <title>网页杂谈</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 </head>
-<body>
+<body style="background-image: url('img/hei.png'); background-size: cover; background-position: center;">
 
     <ul>
         <li><a href="index.html"><i class="ri-home-line"></i></a></li>
         <li class="dropdown">
             <a href="#"><i class="ri-menu-line"></i></a>
             <div class="dropdown-content">
-                <a href="about.html">关于我</a>
-                <a href="hobbies.html">我的爱好</a>
-                <a href="hometown.html">我的家乡</a>
+                <a href="about.html">网页杂谈</a>
+                <a href="hobbies.html">爱好小结</a>
+                <a href="hometown.html">辽宁</a>
                 <a href="school.html">我的学校</a>
             </div>
         </li>
     </ul>
 
     <div class="container">
-        <h1>关于我</h1>
-        <p>老师好！我叫 [李琬琦]，我很高兴您来访问我的主页。在这里，您可以了解一些关于我的事情。</p>
-        <p>我喜欢旅行、阅读和尝试新的事物。我也很喜欢与朋友们一起度过美好的时光。</p>
-        <img src="img/about.png" class="image">
+        <h1>网页说明</h1>
+        <p>老师好!!!我叫周琬琦。我很高兴您来访问我的主页。在这里，您会了解到一些关于我的事情。</p>
+        <p></p>
+        <p>一个建立于21世纪的小站,存活于互联网的边缘</p>
+        <p>是我对于计算机兴趣和探索的开始</p>
+        <p>是我最最初始、稚嫩的样子的记录</p>
+        <p>一个很走心的网站,献给91岁的自己和屏幕前的老师</p>
+        <p>致敬伟大的陈老师</p>
+        <p>也致91岁的自己</p>
+        <img src="img/beijing1.jpg" class="image">
     </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Box to Update Content</title>
+    <style>
+        /* 样式用于创建并定位对话框 */
+        .fixed-box {
+            position: fixed;
+            bottom: 20px; /* 距离底部20像素 */
+            left: 20px; /* 距离左侧20像素 */
+            width: 220px; /* 宽度 */
+            height: 85px; /* 高度 */
+            background-color: rgb(33, 39, 39); /* 背景颜色 */
+            border: 2px solid #333; /* 边框 */
+            display: flex; /* 使用flex布局 */
+            align-items: center; /* 垂直居中对齐 */
+            justify-content: center; /* 水平居中对齐 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            border-radius: 10px; /* 圆角效果 */
+            cursor: pointer; /* 鼠标悬停时显示指针 */
+            transition: transform 0.3s ease, background-color 0.3s ease; /* 添加过渡效果 */
+            overflow: hidden; /* 隐藏溢出内容 */
+        }
+
+        .fixed-box.clicked {
+            transform: scale(1.1); /* 放大效果 */
+            background-color: rgb(34, 44, 44); /* 改变背景颜色 */
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1em;
+            white-space: nowrap;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .fixed-box.clicked .content {
+            transform: translate(-50%, -60%); /* 向上移动 */
+            color: white; /* 改变文字颜色 */
+        }
+    </style>
+</head>
+<body style="background-image: url('img/beijing1.jpg'); background-size: cover; background-position: center;">
+    <!-- 固定位置的框 -->
+    <div class="fixed-box" onclick="updateContent()">
+        <div class="content">每日好心情加载...</div>
+    </div>
+
+    <script>
+        // JavaScript函数用于更新内容和添加动画效果
+        function updateContent() {
+            const box = document.querySelector('.fixed-box');
+            const content = box.querySelector('.content');
+            const currentText = content.innerText;
+            const newText = currentText === "每日好心情加载..." ? "！！哎呀，这都被你发现了" : "每日好心情加载...";
+            content.innerText = newText;
+
+            // 添加点击效果
+            box.classList.add('clicked');
+
+            // 移除点击效果（在动画结束后）
+            setTimeout(() => {
+                box.classList.remove('clicked');
+            }, 300); // 与CSS中的transition时间一致
+        }
+    </script>
+</body>
+</html>
+
+
 
     <!-- 记得把寝室页面链接放到 "" 里头 -->
     <a href = "">
@@ -36,3 +117,4 @@
      </a>
 </body>
 </html>
+
